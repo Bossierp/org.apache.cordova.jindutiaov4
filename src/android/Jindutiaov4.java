@@ -21,9 +21,6 @@ package org.apache.cordova.Jindutiao;
 
 import __PACKAGE_NAME_R_;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-
 import android.content.Intent;
 import android.util.Log;
 

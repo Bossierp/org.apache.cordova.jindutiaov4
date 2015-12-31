@@ -23,7 +23,7 @@ module.exports = function (context) {
     }
 
     var targetDir  = path.join(projectRoot, "platforms", "android", "src", "org.apache.cordova.Jindutiao".replace(/\./g, path.sep));
-        targetFile = path.join(targetDir, "Jindutiao.java");
+        targetFile = path.join(targetDir, "Jindutiaov4.java");
 
     if (['after_plugin_add', 'after_plugin_install', 'after_platform_add'].indexOf(context.hook) === -1) {
         // remove it?
