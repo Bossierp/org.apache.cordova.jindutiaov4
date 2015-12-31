@@ -22,7 +22,7 @@ module.exports = function (context) {
         return ;
     }
 
-    var targetDir  = path.join(projectRoot, "platforms", "android", "src", "org.apache.cordova.Jindutiao".replace(/\./g, path.sep));
+    var targetDir  = path.join(projectRoot, "platforms", "android", "src", "org.apache.cordova.Jindutiaov4".replace(/\./g, path.sep));
         targetFile = path.join(targetDir, "Jindutiaov4.java");
 
     if (['after_plugin_add', 'after_plugin_install', 'after_platform_add'].indexOf(context.hook) === -1) {
@@ -32,7 +32,7 @@ module.exports = function (context) {
         shell.mkdir('-p', targetDir);
 
         // sync the content
-        fs.readFile(path.join(context.opts.plugin.dir, 'src', 'android', 'Jindutiao.java'), {encoding: 'utf-8'}, function (err, data) {
+        fs.readFile(path.join(context.opts.plugin.dir, 'src', 'android', 'Jindutiaov4.java'), {encoding: 'utf-8'}, function (err, data) {
             if (err) {
                 throw err;
             }
