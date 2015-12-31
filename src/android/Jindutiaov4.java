@@ -17,7 +17,7 @@
        under the License.
 */
 
-package org.apache.cordova.Jindutiao;
+package org.apache.cordova.Jindutiaov4;
 
 import __PACKAGE_NAME_R_;
 
@@ -25,7 +25,6 @@ import android.content.Intent;
 import android.util.Log;
 
 import org.apache.cordova.*;
-import org.apache.cordova.engine.*;
 
 import android.app.Dialog;
 import android.view.*;
@@ -34,10 +33,11 @@ import java.util.Date;
 
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
+import android.graphics.Bitmap;
 
 public class Jindutiaov4 extends CordovaPlugin {
 
-    private static final String LOG_TAG = "JindutiaoPlugin";
+    private static final String LOG_TAG = "Jindutiaov4Plugin";
 
     private Dialog loadDialog;
     private ProgressBar progressBar;
@@ -50,7 +50,10 @@ public class Jindutiaov4 extends CordovaPlugin {
     @Override
     public void initialize(CordovaInterface cordova, CordovaWebView webView) {
         super.initialize(cordova, webView);
-        loadDialog = new Dialog((CordovaActivity)cordova.getActivity(), R.style.dialog);  
+
+        CordovaActivity mainActivity = (CordovaActivity)cordova.getActivity();
+
+        loadDialog = new Dialog(mainActivity, R.style.dialog);  
         loadDialog.setCancelable(false);
         loadDialog.setContentView(R.layout.main);
         
@@ -62,8 +65,8 @@ public class Jindutiaov4 extends CordovaPlugin {
         win.setAttributes(lp);
     
         progressBar = (ProgressBar) loadDialog.findViewById(R.id.progressBar5);
-        CordovaWebView webView = new CordovaWebView(MainActivity.this);
-            this.init(webView, new CordovaWebViewClient(this, webView) {
+
+        CordovaWebViewClient webViewClient = new CordovaWebViewClient(mainActivity, webView) {
               // 页面加载完成事件
               @Override
               public void onPageFinished(WebView arg0, String arg1) {
@@ -81,14 +84,17 @@ public class Jindutiaov4 extends CordovaPlugin {
                   startLoad();
                 }
               }
-            }, new CordovaChromeClient(this, webView) {
+            };
+        CordovaChromeClient webChromeClient = new CordovaChromeClient(mainActivity, webView) {
               // 页面加载中的事件
               @Override
               public void onProgressChanged(WebView view, int newProgress) {
                 super.onProgressChanged(view, newProgress);       
                 progressBar.setProgress(newProgress);
             }
-        });
+        };
+        webView.setWebChromeClient(webChromeClient);
+        webView.setWebViewClient(webViewClient);
     }
     
     private void startLoad() {  
@@ -105,5 +111,4 @@ public class Jindutiaov4 extends CordovaPlugin {
         }  
     }
 }
-
     
