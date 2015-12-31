@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-           id="org.apache.cordova.Jindutiao"
+           id="org.apache.cordova.Jindutiaov4"
       version="0.0.1">
 
-    <name>Android Jindutiao</name>
-    <description>Cordova Android Jindutiao Plugin</description>
+    <name>Android Jindutiaov4</name>
+    <description>Cordova Android Jindutiaov4 Plugin</description>
     <license>Apache 2.0</license>
     <keywords>cordova,android,jindutiao</keywords>
-    <repo>https://github.com/ZhichengChen/cordova-plugin-android-jindutiao.git</repo>
-    <issue>https://github.com/ZhichengChen/cordova-plugin-android-jindutiao/issues</issue>
+    <repo>https://github.com/Bossierp/org.apache.cordova.jindutiaov4.git</repo>
+    <issue>https://github.com/Bossierp/org.apache.cordova.jindutiaov4/issues</issue>
 
     <!-- android -->
     <platform name="android">
         <hook type="after_plugin_install" src="scripts/android-install.js" />
         
         <config-file target="res/xml/config.xml" parent="/*">
-            <feature name="Jindutiao">
-                <param name="android-package" value="org.apache.cordova.Jindutiao.Jindutiao"/>
+            <feature name="Jindutiaov4">
+                <param name="android-package" value="org.apache.cordova.Jindutiaov4.Jindutiaov4"/>
                 <param name="onload" value="true" />
             </feature>
         </config-file>
 
-        <source-file src="src/android/Jindutiao.java" target-dir="src/org/apache/cordova/jindutiao" />
+        <source-file src="src/android/Jindutiaov4.java" target-dir="src/org/apache/cordova/jindutiaov4" />
         <source-file src="res/anim/alphain.xml" target-dir="res/anim"/>
         <source-file src="res/anim/alphaout.xml" target-dir="res/anim"/>
         <source-file src="res/drawable/progressbar.xml" target-dir="res/drawable"/>

@@ -38,7 +38,7 @@ import java.util.Date;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 
-public class Jindutiao extends CordovaPlugin {
+public class Jindutiaov4 extends CordovaPlugin {
 
     private static final String LOG_TAG = "JindutiaoPlugin";
 
